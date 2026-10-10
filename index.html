@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dior Luxury Handbags — Fashion Editorial Demo">
+  <title>Dior — Luxury Handbags</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --ivory: #f8f6f1;
+      --cream: #eee9df;
+      --gold: #b49a68;
+      --gray: #77736d;
+      --border: #dedbd4;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 35px;
+      font-weight: 600;
+      letter-spacing: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: .35s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 18px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      margin-top: 76px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #e9e4da;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      width: min(620px, 90%);
+      margin-left: 8%;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(60px, 9vw, 125px);
+      font-weight: 400;
+      line-height: .82;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      max-width: 450px;
+      font-size: 15px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 165px;
+      padding: 14px 25px;
+      border: 1px solid currentColor;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      transition: .35s;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .btn:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    .hero .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      padding: 110px 6%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-heading span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gray);
+    }
+
+    .section-heading h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: 1;
+      margin-top: 15px;
+    }
+
+    /* ================= INTRO ================= */
+
+    .intro {
+      background: var(--ivory);
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 6vw, 75px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 45px;
+      flex-wrap: wrap;
+    }
+
+    .filter {
+      background: none;
+      border: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    .filter.active,
+    .filter:hover {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .product-image {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .product-image img {
+      height: 100%;
+      transition: transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .wishlist {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(0,0,0,.15);
+      background: rgba(255,255,255,.85);
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .product-info {
+      padding: 18px 2px 10px;
+    }
+
+    .product-category {
+      color: var(--gray);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 27px;
+      margin: 4px 0;
+    }
+
+    .product-price {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* ================= STORY ================= */
+
+    .story {
+      background: var(--black);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+    }
+
+    .story-image {
+      min-height: 650px;
+      background: url("https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=1200&q=90")
+      center/cover;
+    }
+
+    .story-content {
+      display: flex;
+      align-items: center;
+      padding: 12%;
+    }
+
+    .story-content span {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    .story-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: .95;
+      font-weight: 400;
+      margin: 20px 0;
+    }
+
+    .story-content p {
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 30px;
+      max-width: 470px;
+    }
+
+    .story .btn {
+      color: white;
+    }
+
+    .story .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    /* ================= CRAFTSMANSHIP ================= */
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .craft-card {
+      padding: 45px 30px;
+      border-right: 1px solid var(--border);
+    }
+
+    .craft-card:last-child {
+      border-right: 0;
+    }
+
+    .craft-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .craft-card h3 {
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 500;
+      margin: 20px 0 10px;
+    }
+
+    .craft-card p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* ================= JOURNAL ================= */
+
+    .journal {
+      background: var(--ivory);
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .journal-card {
+      background: white;
+      overflow: hidden;
+    }
+
+    .journal-card img {
+      aspect-ratio: 4/3;
+      transition: transform .7s;
+    }
+
+    .journal-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .journal-image {
+      overflow: hidden;
+    }
+
+    .journal-content {
+      padding: 28px;
+    }
+
+    .journal-content span {
+      color: var(--gray);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .journal-content h3 {
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 1;
+      margin: 12px 0 20px;
+    }
+
+    .read-more {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 9px;
+      border-bottom: 1px solid black;
+      padding-bottom: 4px;
+    }
+
+    /* ================= NEWSLETTER ================= */
+
+    .newsletter {
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .newsletter h2 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 6vw, 75px);
+      font-weight: 400;
+    }
+
+    .newsletter p {
+      color: var(--gray);
+      margin: 15px auto 30px;
+      max-width: 500px;
+      font-size: 14px;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+
+    .newsletter-form button {
+      border: none;
+      background: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 9px;
+      cursor: pointer;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 80px 6% 35px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 40px;
+      padding-bottom: 70px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 55px;
+      letter-spacing: 7px;
+    }
+
+    .footer-column h4 {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: #aaa;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #ddd;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      color: #888;
+      font-size: 10px;
+    }
+
+    /* ================= MODAL ================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      max-width: 850px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .modal-box img {
+      height: 100%;
+      min-height: 500px;
+    }
+
+    .modal-info {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-info span {
+      color: var(--gray);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .modal-info h2 {
+      font-family: var(--serif);
+      font-size: 50px;
+      line-height: 1;
+      margin: 15px 0;
+    }
+
+    .modal-info p {
+      color: var(--gray);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      border: none;
+      background: white;
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 30px 7%;
+        gap: 5px;
+        transform: translateY(-120%);
+        transition: .4s;
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+      }
+
+      .nav-icons {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .product-grid,
+      .journal-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .craft-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .craft-card:nth-child(2) {
+        border-right: 0;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .story-image {
+        min-height: 500px;
+      }
+
+      .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-logo {
+        grid-column: 1/-1;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        height: 65px;
+      }
+
+      .logo {
+        font-size: 28px;
+      }
+
+      .hero {
+        margin-top: 65px;
+        min-height: 85vh;
+      }
+
+      .hero-content {
+        margin-left: 6%;
+      }
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .product-grid,
+      .journal-grid,
+      .craft-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .craft-card {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .story-image {
+        min-height: 400px;
+      }
+
+      .story-content {
+        padding: 70px 8%;
+      }
+
+      .modal-box {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .modal-box img {
+        min-height: 300px;
+        max-height: 350px;
+      }
+
+      .modal-info {
+        padding: 35px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a href="#" class="logo">DIOR</a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#new">New Arrivals</a></li>
+        <li><a href="#bags">Handbags</a></li>
+        <li><a href="#story">Collections</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-icons">
+      <span>⌕</span>
+      <span>♡</span>
+      <span>□</span>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="new">
+      <div class="hero-image"></div>
+
+      <div class="hero-content reveal">
+        <div class="eyebrow">The New Collection</div>
+
+        <h1>The Art<br>of Elegance.</h1>
+
+        <p>
+          Discover timeless handbags crafted with exceptional
+          attention to detail and an unmistakable sense of style.
+        </p>
+
+        <a href="#bags" class="btn">Explore Collection</a>
+      </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="intro-inner reveal">
+        <h2>Timeless by Design.</h2>
+
+        <p>
+          A celebration of refined silhouettes, exceptional materials,
+          and the enduring language of modern luxury. Explore a curated
+          selection of iconic handbags and contemporary creations.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="bags">
+      <div class="section-heading reveal">
+        <span>Discover</span>
+        <h2>Iconic Handbags</h2>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="iconic">Iconic</button>
+        <button class="filter" data-filter="new">New</button>
+        <button class="filter" data-filter="accessories">Accessories</button>
+      </div>
+
+      <div class="product-grid">
+
+        <article class="product-card reveal" data-category="iconic"
+          data-name="Lady Dior"
+          data-image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85" alt="Luxury handbag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Iconic</div>
+            <div class="product-name">Lady Dior</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+
+        <article class="product-card reveal" data-category="iconic"
+          data-name="Saddle Bag"
+          data-image="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1000&q=85" alt="Designer handbag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Iconic</div>
+            <div class="product-name">Saddle Bag</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+
+        <article class="product-card reveal" data-category="new"
+          data-name="30 Montaigne"
+          data-image="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1000&q=85" alt="Fashion handbag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">New</div>
+            <div class="product-name">30 Montaigne</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+
+        <article class="product-card reveal" data-category="accessories"
+          data-name="Book Tote"
+          data-image="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1000&q=85" alt="Luxury tote bag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Accessories</div>
+            <div class="product-name">Book Tote</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+
+        <article class="product-card reveal" data-category="new"
+          data-name="Dior Caro"
+          data-image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85" alt="Premium handbag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">New</div>
+            <div class="product-name">Dior Caro</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+
+        <article class="product-card reveal" data-category="accessories"
+          data-name="Mini Bag"
+          data-image="https://images.unsplash.com/photo-1585488436500-37e7e8e3d1fc?auto=format&fit=crop&w=1200&q=90">
+          <button class="wishlist">♡</button>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1585488436500-37e7e8e3d1fc?auto=format&fit=crop&w=1000&q=85" alt="Mini luxury bag">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Accessories</div>
+            <div class="product-name">Mini Bag</div>
+            <div class="product-price">Price on request</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- STORY -->
+    <section class="story" id="story">
+
+      <div class="story-image"></div>
+
+      <div class="story-content">
+        <div class="reveal">
+          <span>The House</span>
+
+          <h2>A Legacy of Haute Couture.</h2>
+
+          <p>
+            From the atelier to the runway, craftsmanship remains
+            at the heart of every creation. Each silhouette reflects
+            a dialogue between heritage, artistry, and contemporary
+            expression.
+          </p>
+
+          <a href="#craft" class="btn">Discover the Story</a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- CRAFTSMANSHIP -->
+    <section id="craft">
+
+      <div class="section-heading reveal">
+        <span>The Details</span>
+        <h2>Crafted With Precision</h2>
+      </div>
+
+      <div class="craft-grid">
+
+        <div class="craft-card reveal">
+          <div class="craft-number">01</div>
+          <h3>Exceptional Craftsmanship</h3>
+          <p>
+            Refined construction and careful finishing define every detail.
+          </p>
+        </div>
+
+        <div class="craft-card reveal">
+          <div class="craft-number">02</div>
+          <h3>Refined Materials</h3>
+          <p>
+            A sophisticated selection of textures and materials creates
+            a distinctive visual identity.
+          </p>
+        </div>
+
+        <div class="craft-card reveal">
+          <div class="craft-number">03</div>
+          <h3>Timeless Design</h3>
+          <p>
+            Elegant proportions designed to transcend seasons and trends.
+          </p>
+        </div>
+
+        <div class="craft-card reveal">
+          <div class="craft-number">04</div>
+          <h3>Attention to Detail</h3>
+          <p>
+            From hardware to stitching, every element receives careful attention.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- JOURNAL -->
+    <section class="journal" id="journal">
+
+      <div class="section-heading reveal">
+        <span>Stories</span>
+        <h2>The Dior Journal</h2>
+      </div>
+
+      <div class="journal-grid">
+
+        <article class="journal-card reveal">
+          <div class="journal-image">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Fashion editorial">
+          </div>
+          <div class="journal-content">
+            <span>Fashion</span>
+            <h3>The Evolution of the Iconic Handbag</h3>
+            <a href="#" class="read-more">Read Story</a>
+          </div>
+        </article>
+
+        <article class="journal-card reveal">
+          <div class="journal-image">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85" alt="Luxury fashion">
+          </div>
+          <div class="journal-content">
+            <span>Craftsmanship</span>
+            <h3>Inside the Art of Luxury Craftsmanship</h3>
+            <a href="#" class="read-more">Read Story</a>
+          </div>
+        </article>
+
+        <article class="journal-card reveal">
+          <div class="journal-image">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=85" alt="Fashion style">
+          </div>
+          <div class="journal-content">
+            <span>Style</span>
+            <h3>A Guide to Timeless Handbag Styles</h3>
+            <a href="#" class="read-more">Read Story</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="contact">
+
+      <div class="reveal">
+        <h2>Enter the World.</h2>
+
+        <p>
+          Stay informed about collections, fashion stories,
+          and new arrivals.
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm">
+          <input
+            type="email"
+            placeholder="Your email address"
+            aria-label="Email address"
+            required
+          >
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-logo">DIOR</div>
+
+      <div class="footer-column">
+        <h4>Client Services</h4>
+        <a href="#">Contact</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Care Guide</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>The House</h4>
+        <a href="#">About</a>
+        <a href="#">Heritage</a>
+        <a href="#">Craftsmanship</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Collections</h4>
+        <a href="#bags">Handbags</a>
+        <a href="#new">New Arrivals</a>
+        <a href="#">Accessories</a>
+        <a href="#journal">Journal</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Luxury Fashion Demo</span>
+      <span>Prototype — Not an official Dior website</span>
+    </div>
+
+  </footer>
+
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal">
+
+    <div class="modal-box">
+
+      <button class="close-modal" id="closeModal">×</button>
+
+      <img id="modalImage" src="" alt="Product">
+
+      <div class="modal-info">
+        <span>Selected Collection</span>
+
+        <h2 id="modalName">Product</h2>
+
+        <p>
+          A refined handbag concept presented as part of this
+          luxury fashion website prototype.
+        </p>
+
+        <p>
+          <strong>Availability:</strong> Price on request
+        </p>
+
+        <button class="btn" onclick="alert('Demo: product added to bag.')">
+          Add to Bag
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent =
+        navLinks.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+
+    /* ================= FILTER ================= */
+
+    const filters = document.querySelectorAll(".filter");
+    const products = document.querySelectorAll(".product-card");
+
+    filters.forEach(filter => {
+
+      filter.addEventListener("click", () => {
+
+        filters.forEach(item => item.classList.remove("active"));
+        filter.classList.add("active");
+
+        const selected = filter.dataset.filter;
+
+        products.forEach(product => {
+
+          const category = product.dataset.category;
+
+          if (selected === "all" || category === selected) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* ================= PRODUCT MODAL ================= */
+
+    const modal = document.getElementById("productModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalName = document.getElementById("modalName");
+    const closeModal = document.getElementById("closeModal");
+
+    products.forEach(product => {
+
+      product.addEventListener("click", event => {
+
+        if (event.target.classList.contains("wishlist")) {
+          return;
+        }
+
+        modalImage.src = product.dataset.image;
+        modalName.textContent = product.dataset.name;
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    modal.addEventListener("click", event => {
+
+      if (event.target === modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+    });
+
+
+    /* ================= WISHLIST ================= */
+
+    document.querySelectorAll(".wishlist").forEach(button => {
+
+      button.addEventListener("click", event => {
+
+        event.stopPropagation();
+
+        button.textContent =
+          button.textContent === "♡" ? "♥" : "♡";
+
+        button.style.color =
+          button.textContent === "♥" ? "#9b2c2c" : "#111";
+
+      });
+
+    });
+
+
+    /* ================= SCROLL REVEAL ================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => observer.observe(element));
+
+
+    /* ================= NEWSLETTER ================= */
+
+    document.getElementById("newsletterForm")
+      .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        alert(
+          "Thank you for subscribing. This is a demo newsletter form."
+        );
+
+        event.target.reset();
+
+      });
+
+
+    /* ================= ESCAPE MODAL ================= */
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
